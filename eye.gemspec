@@ -5,13 +5,13 @@ Gem::Specification.new do |gem|
   gem.email         = "eye-rb@googlegroups.com"
 
   gem.description   = gem.summary = \
-    %q{Process monitoring tool. Inspired from Bluepill and God. Requires Ruby(MRI) >= 1.9.3-p194. Uses Celluloid and Celluloid::IO.}
+    %q{FORK FOR TESTING. Process monitoring tool. Inspired from Bluepill and God. Requires Ruby(MRI) >= 1.9.3-p194. Uses Celluloid and Celluloid::IO.}
   gem.homepage      = "http://github.com/kostya/eye"
 
   gem.files         = `git ls-files`.split($\).reject{|n| n =~ %r[png|gif\z]}.reject{|n| n =~ %r[^(test|spec|features)/]}
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   #gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "eye"
+  gem.name          = "ace-eye"
   gem.require_paths = ["lib"]
   gem.version       = Eye::VERSION
   gem.license       = "MIT"
