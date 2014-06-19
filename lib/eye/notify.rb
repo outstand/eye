@@ -36,7 +36,7 @@ class Eye::Notify
       type = nh[:type]
       config = (settings[type] || {}).merge(nh[:opts] || {}).merge(:contact => nh[:contact])
       klass = get_class(type)
-      notify = klass.new(config, message_h)
+      notify = klass.new_link(config, message_h)
       notify.async_notify if notify
     end
 
