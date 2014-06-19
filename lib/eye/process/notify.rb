@@ -1,5 +1,7 @@
 module Eye::Process::Notify
 
+  trap_exit :notify_died
+
   # notify to user:
   # 1) process crashed by itself, and we restart it [:info]
   # 2) checker bounded to restart process [:warn]
@@ -21,6 +23,10 @@ module Eye::Process::Notify
         Eye::Notify.notify(contact, message) if ilevel(level) >= ilevel(not_level)
       end
     end
+  end
+
+  def notify_died(actor, reason)
+    error "NOTIFY DIED: #{actor.inspect} has died because of a #{reason.class}"
   end
 
 private
